@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bear Love Letter</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to bottom,#fff0f5,#ffe4ec);
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+}
+
+.container{
+    position:relative;
+    width:320px;
+    height:650px;
+}
+
+/* ================= BEAR ================= */
+
+.bear{
+    position:relative;
+    width:260px;
+    height:360px;
+    margin:auto;
+}
+
+/* EARS */
+.ear{
+    position:absolute;
+    width:80px;
+    height:80px;
+    background:#b67c52;
+    border-radius:50%;
+    top:10px;
+}
+
+.ear::after{
+    content:'';
+    position:absolute;
+    width:40px;
+    height:40px;
+    background:#f5c6a5;
+    border-radius:50%;
+    top:20px;
+    left:20px;
+}
+
+.ear.left{ left:20px; }
+.ear.right{ right:20px; }
+
+/* HEAD */
+.head{
+    position:absolute;
+    width:220px;
+    height:200px;
+    background:#b67c52;
+    border-radius:50%;
+    top:40px;
+    left:20px;
+}
+
+/* EYES */
+.eye{
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:#222;
+    border-radius:50%;
+    top:80px;
+}
+
+.eye.left{ left:65px; }
+.eye.right{ right:65px; }
+
+/* MOUTH */
+.mouth{
+    position:absolute;
+    width:70px;
+    height:55px;
+    background:#f5c6a5;
+    border-radius:50%;
+    left:75px;
+    top:105px;
+}
+
+.nose{
+    position:absolute;
+    width:20px;
+    height:15px;
+    background:#222;
+    border-radius:50%;
+    top:12px;
+    left:25px;
+}
+
+.smile{
+    position:absolute;
+    width:30px;
+    height:15px;
+    border-bottom:3px solid #222;
+    border-radius:0 0 30px 30px;
+    top:25px;
+    left:20px;
+}
+
+/* BODY */
+.body{
+    position:absolute;
+    width:200px;
+    height:180px;
+    background:#b67c52;
+    border-radius:45%;
+    bottom:0;
+    left:30px;
+}
+
+/* ARMS */
+.arm{
+    position:absolute;
+    width:70px;
+    height:120px;
+    background:#b67c52;
+    border-radius:40px;
+    top:170px;
+}
+
+.arm.left{
+    left:-5px;
+    transform:rotate(25deg);
+}
+
+.arm.right{
+    right:-5px;
+    transform:rotate(-25deg);
+}
+
+/* HEART */
+.heart{
+    position:absolute;
+    width:90px;
+    height:90px;
+    background:#ff4d6d;
+    transform:rotate(-45deg);
+    top:200px;
+    left:85px;
+    animation:beat 1s infinite;
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+    position:absolute;
+    width:90px;
+    height:90px;
+    background:#ff4d6d;
+    border-radius:50%;
+}
+
+.heart::before{
+    top:-45px;
+    left:0;
+}
+
+.heart::after{
+    left:45px;
+    top:0;
+}
+
+@keyframes beat{
+    0%,100%{
+        transform:rotate(-45deg) scale(1);
+    }
+    50%{
+        transform:rotate(-45deg) scale(1.08);
+    }
+}
+
+/* ================= LETTER ================= */
+
+.letter-box{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.letter{
+    position:relative;
+    width:280px;
+    height:180px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    overflow:hidden;
+}
+
+/* PAPER */
+.paper{
+    position:absolute;
+    width:240px;
+    background:#fffafc;
+    left:20px;
+    top:20px;
+    border-radius:15px;
+    padding:18px;
+    font-size:14px;
+    line-height:1.6;
+    color:#444;
+    animation:slideUp 2s ease;
+}
+
+.paper h2{
+    text-align:center;
+    color:#ff4d6d;
+    margin-bottom:10px;
+}
+
+@keyframes slideUp{
+    from{
+        transform:translateY(150px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts span{
+    position:absolute;
+    color:#ff7b9c;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+.hearts span:nth-child(1){
+    left:10%;
+    animation-delay:0s;
+}
+.hearts span:nth-child(2){
+    left:40%;
+    animation-delay:2s;
+}
+.hearts span:nth-child(3){
+    left:70%;
+    animation-delay:4s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(-120vh);
+        opacity:1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+</div>
+
+<div class="container">
+
+    <!-- BEAR -->
+    <div class="bear">
+
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+
+        <div class="head">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="mouth">
+                <div class="nose"></div>
+                <div class="smile"></div>
+            </div>
+        </div>
+
+        <div class="body"></div>
+
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+
+        <div class="heart"></div>
+
+    </div>
+
+    <!-- LETTER -->
+    <div class="letter-box">
+        <div class="letter">
+
+            <div class="paper">
+                <h2>Untuk Cyline 💌</h2>
+
+                Maaf ya sayang karena aku sering ninggalin kamu dan kadang bikin kamu ngerasa sendiri.  
+                Aku tau aku masih sering kurang buat kamu, kurang ngabarin, kurang ada waktu.  
+
+                Tapi percaya, aku tetep sayang sama kamu.  
+                Makasih udah selalu sabar ngadepin aku. ❤️
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
